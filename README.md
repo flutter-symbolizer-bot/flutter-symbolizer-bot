@@ -65,13 +65,13 @@ If your backtrace comes from Crashlytics with lines that look like this:
 4  Flutter                        0x106013134 (Missing)
 ```
 
-You would need to tell me `@flutter-symbolizer-bot force ios [arm64|arm] [engine#<sha>|flutter#<commit>] link|this`:
+You would need to tell me `@flutter-symbolizer-bot force ios [arm64|arm] [engine#<sha>|flutter#v<commit>] link|this`:
 
 - `force ios` tells me to ignore native crash markers and simply look for lines
   that match `ios` backtrace format;
 - `[arm64|arm]` gives me information about architecture, which is otherwise
   missing from the report;
-- `engine#sha|flutter#commit` gives me engine version;
+- `engine#sha|flutter#v<commit>` gives me engine version (note `v` in `flutter#v` - this prevents linkifying which would otherwise confuse the bot);
 - `link|this` specifies which comment to symbolize. Note ⚠️: because this is a
   departure from native crash report formats you *must* tell me which comment
   to symbolize manually
