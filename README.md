@@ -34,15 +34,16 @@ When you mention me in the comment you can include a number of
 _symbolization overrides_ which would fill in the gaps in information for me.
 
 ```
-@flutter-symbolizer-bot [engine#<sha>|flutter#<commit>] [profile|release|debug] [x86|arm|arm64|x64]
+@flutter-symbolizer-bot [engine#<sha>|flutter#v<commit>] [profile|release|debug] [x86|arm|arm64|x64]
 ```
 
 **Important ⚠️**: `@flutter-symbolizer-bot` **MUST** be the very first thing
 in your comment.
 
 - `engine#<sha>` allows to specify which _engine commit_ I should use;
-- `flutter#<commit>` allows to specify which Flutter Framework commit I
-  should use (this is just another way of specifiying engine commit);
+- `flutter#v<commit>` allows to specify which Flutter Framework commit I
+  should use (this is just another way of specifiying engine commit). Note 
+  `v` in `flutter#v` - this prevents linkifying which would otherwise confuse the bot;
 - `profile|release|debug` tells me which _build mode_ I should use (iOS builds
   only have `release` symbols available though);
 - `x86|arm|arm64|x64` tells me which _architecture_ I should use.
